@@ -1,0 +1,130 @@
+---
+---
+
+@import "base.scss";
+
+.video-container {
+  position: relative;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+}
+
+.video-container_container {
+  position: relative;
+  z-index: 100;
+}
+.video-container__filter {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  //background: rgba(2,0,36, 0.4);
+  //background: linear-gradient(312deg, rgba(2,0,36,0.4) 0%, rgba(9,9,121,0.4) 35%, rgba(0,212,255,0.4) 100%)
+  background-color: rgba(0, 0, 0, 0.4);
+  z-index: 1;
+}
+
+.video-container video {
+  z-index: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  min-width: 100%;
+  min-height: 100%;
+  -ms-transform: translateX(-50%) translateY(-50%);
+  -moz-transform: translateX(-50%) translateY(-50%);
+  -webkit-transform: translateX(-50%) translateY(-50%);
+  transform: translateX(-50%) translateY(-50%);
+  width: auto;
+  height: auto;
+}
+
+.video-container_container a.social-link {
+  color: #fff;
+  text-decoration: none;
+  -webkit-transition: color 0.4s;
+  transition: color 0.4s;
+  margin: 1em;
+}
+
+.video-container_container a.social-link:hover {
+  color: rgba(255, 255, 255, 0.5);
+  text-decoration: none;
+}
+
+.video-container_container a.watch-button {
+  color: #fff;
+  font-family: $header-font;
+  font-weight: 400;
+
+  padding: 1rem 4rem;
+  border: 1px solid #fff;
+  letter-spacing: 0.2rem;
+  text-decoration: none;
+
+  -webkit-transition: color 0.4s;
+  transition: color 0.4s;
+
+  -webkit-transition: background-color 0.4s;
+  transition: background-color 0.4s;
+  animation: fadeIn 0.5s ease-in both;
+  animation-delay: 0.8s;
+}
+
+.video-container_container a.watch-button:hover {
+  background-color: #fff;
+  color: #000;
+  font-family: $header-font;
+  font-weight: 400;
+
+  padding: 1rem 4rem;
+  border: 1px solid #fff;
+}
+
+.logo-column {
+  background: linear-gradient(90deg, #00000009 1%, transparent 1%) 1px 0, #fff;
+  background-size: 200px 1px;
+
+  color: #bfd1d5;
+  background-color: #233535;
+  clip-path: polygon(0 0, 100% 0, 100% 80%, 0 100%);
+  overflow: hidden;
+}
+
+.logo-opacity {
+  background-color: rgba(35, 52, 52, 0.8) !important;
+}
+
+/* Prevent font scaling beyond this breakpoint */
+@media (min-width: 768px) {
+  .logo-column {
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 10% 100%);
+  }
+}
+
+#logo {
+  opacity: 0;
+  animation: fadeInDown 1s ease-in both;
+}
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translate3d(0, -20%, 0);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}

@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    {% include skeleton/head.html %}
+</head>
+
+<body>
+
+
+
+    <header class="wh-full">
+        <div class="video-container">
+
+            {%- if site.under-construction.disable-filter == false -%}
+            <div class=" video-container__filter"></div>
+            {%- endif -%}
+
+
+            <video playsinline="playsinline" autoplay="autoplay" muted="muted" loop="loop">
+                <source src="{{site.url}}/assets/video/WebsiteLightExport.m4v" type="video/mp4">
+            </video>
+
+            <div class="video-container_container h-100 row">
+                <div class="col-12 order-2 col-md-5 order-md-1  d-flex justify-content-center">
+                    <div class="align-self-center ">
+                        <a class="watch-button"
+                            href="https://youtube.com/channel/{{ site.youtube_channelId| cgi_escape | escape }}">
+                            WATCH </a>
+                    </div>
+                </div>
+
+
+
+                <div
+                    class="col-12 order-1 order-md-2 logo-column {% if site.under-construction.enable-opacity %} logo-opacity {% endif %} col-md-7 d-flex justify-content-center">
+
+                    <div id="logo" class="align-self-center">
+                        <h1>FDRotors</h1>
+                        <h4 style="font-weight: 600;">Fabio Dono</h4>
+                        <p class="lead">Pilota Certificato Enac per Operazioni Critiche</p>
+
+                        <div class=" social-link-list text-center">
+                            <a class="social-link lead" href="mailto: {{site.email}}"
+                                alt="mail to {{ site.email| escape }}">
+                                <i style="color: #bfd1d5" class="fas fa-envelope"></i>
+
+                            </a>
+
+
+                            <a class="social-link lead"
+                                href="https://youtube.com/channel/{{ site.youtube_channelId| cgi_escape | escape }}"
+                                alt="{{ site.youtube_username| escape }}">
+                                <i style="color: #ff2501" class="fab fa-youtube"></i>
+
+                            </a>
+
+                            <a class="social-link lead" href="{{site.instagram_url}}"
+                                alt="{{ site.instagram_username| escape }}">
+                                <i style="color: transparent;
+  background: -webkit-radial-gradient(30% 107%, circle, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+  background: -o-radial-gradient(30% 107%, circle, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+  background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+  background: -webkit-radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+  background-clip: text;
+  -webkit-background-clip: text;" class="fab fa-instagram"></i>
+
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+
+
+    {% include skeleton/footer.html %}
+
+</body>
+
+</html>

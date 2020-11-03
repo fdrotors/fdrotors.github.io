@@ -17,7 +17,7 @@
             {%- endif -%}
 
 
-            <video playsinline="playsinline" autoplay="autoplay" muted="muted" loop="loop">
+            <video id="video_background" playsinline="playsinline" autoplay="autoplay" muted="muted" loop="loop">
                 <source src="{{site.url}}/assets/video/WebsiteLightExport.m4v" type="video/mp4">
             </video>
 
@@ -76,6 +76,10 @@
 
 
     {% include skeleton/footer.html %}
+
+    <script>
+        document.querySelector('#video_background').play();
+    </script>
 
 </body>
 
